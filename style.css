@@ -101,3 +101,10 @@ body {
   .edit-button button:hover {
     background-color: #218838;
   }
+  .visible {
+    display: block;
+ }
+ 
+ .hidden {
+    display: none;
+ }
