@@ -15,7 +15,7 @@
       <li><a href="#">Sitografia</a></li>
     </ul>
     <!-- Pulsante che apre la pagina admin -->
-    <a href="admin.html" class="admin-button">ADMIN</a>
+    <a href="#login-dialog" class="admin-button">ADMIN</a>
   </div>
 
   <!-- Contenuto principale -->
@@ -23,7 +23,6 @@
     <h1>PROGETTO POI</h1>
     <h2>TACCONI BARANI MARRA</h2>
     <div class="main">
-     
       <div class="table">
         <table>
           <thead>
@@ -45,7 +44,7 @@
               <td>Il Piacere</td>
               <td>Roma</td>
               <td>1879-1891</td>
-              <td> Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre opere</td>
+              <td>Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre opere</td>
             </tr>
             <tr>
               <td>--</td>
@@ -99,6 +98,18 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <!-- Finestra di Login -->
+  <div id="login-dialog" class="login-dialog">
+    <h2>Pagina di Login</h2>
+    <form action="admin.html" method="GET">
+      <label for="username">Nome utente:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Log In</button>
+    </form>
   </div>
 </body>
 </html>
