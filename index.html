@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progetto POI</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/> <!--- mappa --->
+     <style>
+      #map { width: 600px; height: 600px; }
+     </style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +33,7 @@
         <div class="table">
           <table>
             <thead>
+              <div id="map"></div>
               <tr>
                 <th>Opera</th>
                 <th>Luogo</th>
@@ -104,7 +111,17 @@
       
   </div>
  
+<<<<<<< HEAD
 
  
+=======
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script type="module" src="./index.js"></script>
+  <script type="module" src="./login.js"></script>
+  <script type="module" src="./map.js"></script>
+  <script type="module" src="./admin.js"></script>
+>>>>>>> 6594b7472cf48189b1bdd732fd6c5f1b458f55c8
 </body>
 </html>
