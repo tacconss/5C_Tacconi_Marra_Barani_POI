@@ -19,9 +19,25 @@ const aggiungiPulsantiRimozione=()=>{
         //console.log(array1[i]);
     }
 }
+const rimuoviRiga=()=>{
+    let contEsterno=1; //permette di tenere il conto del numero del bottone
+    for(let i=0;i<array1.length;i++){
+        let bottone=document.querySelector(`#bottone${contEsterno}`);
+        bottone.onclick=()=>{
+            console.log("ciao"+(contEsterno));//funziona, adesso bisogna dire che viene tolta la riga
+            //va presa la riga e va nascosta
+            
+        }
+        contEsterno++;
+    }
+}
+
+
+
+
 
 aggiungiPulsantiRimozione();
-
+rimuoviRiga();
 
 
 
