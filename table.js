@@ -49,7 +49,7 @@ const data = [
   };
   
   // Mostra i dettagli di una riga
-  const showDetails = id => {
+  const showDetails = (id)=> {
     const item = data.find(entry => entry.id === id);
     if (item) {
       alert(`Opera: ${item.opera}\nLuogo: ${item.luogo}\nData: ${item.data}\nDescrizione: ${item.descrizione}`);
