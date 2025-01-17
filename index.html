@@ -1,35 +1,44 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--L'HTML ORIGINALE E VERO --->
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progetto POI</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/> <!--- mappa --->
-     <style>
-      #map { width: 600px; height: 600px; }
-     </style>
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> <!--- mappa --->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    #map {
+      width: 600px;
+      height: 600px;
+    }
+  </style>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div id="container" class="container">
-    <!-- Navbar -->
-    <div class="navbar">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Sitografia</a></li>
-      </ul>
-      <!-- Pulsante che apre la pagina login -->
-      <a href="login.html" class="admin-button">ADMIN</a>
-    </div>
 
-    <!-- Contenuto principale -->
-    <div class="content">
+<body>
+  <!-- Navbar -->
+
+  <div class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Sitografia</a></li>
+    </ul>
+    <!-- Pulsante che apre la pagina login -->
+    <a href="#login" class="admin-button">ADMIN</a>
+  </div>
+
+  <!-- parte della home verso la login-->
+  <div id="container" class="container">
+
+    <!-- Contenuto principale della home-->
+    <div id="home" class="content page visible">
       <h1>PROGETTO POI</h1>
       <h2>TACCONI BARANI MARRA</h2>
       <div class="main">
+        <!-- pagina principale-->
         <div class="table">
           <table>
             <thead>
@@ -46,13 +55,15 @@
                 <td>--</td>
                 <td>Fiume</td>
                 <td>1919-1920</td>
-                <td>D'Annunzio guidò l'Impresa di Fiume, una spedizione militare con cui occupò la città per rivendicarne l'annessione all'Italia</td>
+                <td>D'Annunzio guidò l'Impresa di Fiume, una spedizione militare con cui occupò la città per
+                  rivendicarne l'annessione all'Italia</td>
               </tr>
               <tr>
                 <td>Il Piacere</td>
                 <td>Roma</td>
                 <td>1879-1891</td>
-                <td>Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre opere</td>
+                <td>Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre
+                  opere</td>
               </tr>
               <tr>
                 <td>--</td>
@@ -64,7 +75,8 @@
                 <td>--</td>
                 <td>Gardone Riviera</td>
                 <td>1921-1938</td>
-                <td>Dopo l'Impresa di Fiume, si trasferì nella villa Cargnacco, che trasformò nel Vittoriale degli Italiani.</td>
+                <td>Dopo l'Impresa di Fiume, si trasferì nella villa Cargnacco, che trasformò nel Vittoriale degli
+                  Italiani.</td>
               </tr>
               <tr>
                 <td>Meriggio</td>
@@ -104,6 +116,24 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+      </div>
+
+    </div>
+    <!--pagina login-->
+    <div id="login" class="page hidden">
+      <!-- parte della login verso area admin-->
+      <div id="parteLogin" >
+        <div class="login-dialog">
+          <h2>Pagina di Login</h2>
+          <form action="#admin">
+            <label for="username">Nome utente:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <a href="#admin"><button type="button">Log In</button></a>
+          </form>
         </div>
       </div>
     </div>
@@ -199,10 +229,7 @@
 
     </div>
 
-    
 
-
-    
 
 
     <!-- pagina form admin-->
@@ -288,22 +315,21 @@
       <h4>Seleziona il luogo da modificare</h4>
 
       <div class="mb-3">
-          <label for="idInserimentoOpera" class="form-label">Opera</label>
-          <input type="form-control" class="form-control" id="idInserimentoOpera" placeholder="Nome Opera">
+          <label for="exampleFormControlInput1" class="form-label">Opera</label>
+          <input type="form-control" class="form-control" id="exampleFormControlInput1" placeholder="Nome Opera">
       </div>
         <div class="mb-3">
-          <label for="idInserimentoData" class="form-label">Data</label>
-          <input type="form-control" class="form-control" id="idInserimentoData" placeholder="Inserire Data">
+          <label for="exampleFormControlTextarea1" class="form-label">Data</label>
+          <input type="form-control" class="form-control" id="exampleFormControlInput1" placeholder="Inserire Data">
         </div>
         <div class="mb-3">
-          <label for="idInserimentoLuogo" class="form-label">Luogo</label>
-          <input type="form-control" class="form-control" id="idInserimentoLuogo" placeholder="Inserire Luogo">
+          <label for="exampleFormControlTextarea1" class="form-label">Luogo</label>
+          <input type="form-control" class="form-control" id="exampleFormControlInput1" placeholder="Inserire Luogo">
         </div>
         <div class="mb-3">
-          <label for="idInserimentoDescrizione" class="form-label">Descrizione</label>
-          <input type="form-control" class="form-control" id="idInserimentoDescrizione" placeholder="Inserire Descrizione">
+          <label for="exampleFormControlTextarea1" class="form-label">Descrizione</label>
+          <input type="form-control" class="form-control" id="exampleFormControlInput1" placeholder="Inserire Descrizione">
         </div>
-        <button type="button" id="aggiungiRiga">Aggiungi</button>
 
 
     </div>
@@ -312,15 +338,15 @@
 
 
 
- 
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-  <script type="module" src="./index.js"></script>
-  <script type="module" src="./login.js"></script>
-  <script type="module" src="./map.js"></script>
-  <script type="module" src="./admin.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./login.js"></script>
+    <script type="module" src="./map.js"></script>
+    <script type="module" src="./admin.js"></script>
 
 </body>
+
 </html>
