@@ -40,4 +40,4 @@ const raccogliDatiTabella = () => {
   };
 
   // Esempio di chiamata alla funzione per il salvataggio
-  salvaDatiTabella();
+  console.log(salvaDatiTabella());
