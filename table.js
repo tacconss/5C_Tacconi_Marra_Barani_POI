@@ -2,7 +2,7 @@ const createTable = (parentElement, canDeleteRows = true) => {
     let data;
     return {
       build: (dataInput) => {
-        data = [...dataInput]; // Copia i dati per evitare effetti collaterali
+        data = [...dataInput]; // Copia i dati
       },
       render: () => {
         let htmlTable = "<table>";
@@ -11,8 +11,8 @@ const createTable = (parentElement, canDeleteRows = true) => {
             // Intestazione della tabella
             return "<tr>" + row.map((col) => "<th>" + col + "</th>").join("") + "</tr>";
           } else {
-            // Riga con bottoni per le altre righe (solo se consentito)
-            const id = index - 1; // Usato per identificare univocamente ogni riga
+            
+            const id = index - 1; 
             return (
               `<tr id='row_${parentElement.id}_${id}'>` +
               row.map((col) => "<td>" + col + "</td>").join("") +
@@ -28,7 +28,6 @@ const createTable = (parentElement, canDeleteRows = true) => {
         htmlTable += "</table>";
         parentElement.innerHTML = htmlTable;
   
-        // Gestione degli eventi dei bottoni solo se consentito
         if (canDeleteRows) {
           let eliminaButtons = parentElement.querySelectorAll(".pulsantiElimina");
           eliminaButtons.forEach((button) => {
@@ -36,9 +35,9 @@ const createTable = (parentElement, canDeleteRows = true) => {
               const id = parseInt(button.id.replace(`bottoneE_${parentElement.id}_`, ""));
               const rowToDelete = parentElement.querySelector(`#row_${parentElement.id}_${id}`);
               if (rowToDelete) {
-                rowToDelete.remove(); // Elimina la riga dal DOM
+                rowToDelete.remove(); // Elimina la riga dal html
               }
-              data.splice(id + 1, 1); // Aggiorna i dati per mantenere la coerenza
+              data.splice(id + 1, 1); // Aggiorna i dati
             };
           });
         }
@@ -46,7 +45,7 @@ const createTable = (parentElement, canDeleteRows = true) => {
     }
   };
   
-  // Creazione della prima tabella (senza eliminazione righe)
+  // Creazione della prima tabella
   const table1 = createTable(document.querySelector("#table1"), false);
   table1.build([
     ["Opera", "Luogo", "Data", "Descrizione"],
@@ -63,7 +62,7 @@ const createTable = (parentElement, canDeleteRows = true) => {
   ]);
   table1.render();
   
-  // Creazione della seconda tabella (con eliminazione righe)
+  // Creazione della seconda tabella
   const table2 = createTable(document.querySelector("#table2"), true);
   table2.build([
     ["Opera", "Luogo", "Data", "Descrizione"],
