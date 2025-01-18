@@ -40,8 +40,68 @@ body {
   padding: 8px 15px;
   cursor: pointer;
   border-radius: 4px;
+  text-decoration: none;
 }
 
+.admin-button:hover {
+  background-color: #333;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Sezione Home */
+#home {
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+#home h2 {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Tabella */
+.table {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 1200px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Dialog Login */
 .login-dialog {
   width: 100%;
   max-width: 400px;
@@ -50,6 +110,11 @@ body {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-dialog h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .login-dialog form label {
@@ -66,7 +131,7 @@ body {
   border-radius: 4px;
 }
 
-button {
+.login-dialog button {
   display: block;
   width: 100%;
   padding: 10px;
@@ -77,43 +142,30 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.login-dialog button:hover {
   background-color: #218838;
 }
 
-.table {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-table {
-  border-collapse: collapse;
-  width: 80%;
-}
-
-th, td {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background-color: #333;
-  color: white;
-}
-.hidden{
+/* Visibilità delle pagine */
+.hidden {
   display: none;
 }
-.visible{
+
+.visible {
   display: block;
 }
 
+/* Admin Page */
+.admin-area h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
 
+.admin-area .table {
+  margin-top: 20px;
+}
 
-
-
-
-
-
-
+.opera {
+  font-style: italic;
+}
