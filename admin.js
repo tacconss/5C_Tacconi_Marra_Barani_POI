@@ -1,4 +1,4 @@
-const opere = document.querySelectorAll(".opera"); //prende tutte le opere in automatico (14/01/2024)
+/*const opere = document.querySelectorAll(".opera"); //prende tutte le opere in automatico (14/01/2024)
 const aggiungiRiga=document.querySelector("#aggiungiRiga");//bottone quando viene premuto aggiunge la riga (formAdmin)
 
 
@@ -24,7 +24,7 @@ const rimuoviRiga=()=>{
     let template=`<tr><td>&OPERA</td><td>&LUOGO</td><td>&DATA</td><td>&DESCRIZIONE</td></tr>`;
     
     aggiungiRiga.onclick=()=>{
-        /*
+        
         const a=document.querySelector("#idInserimentoOpera");
         const b=document.querySelector("#idInserimentoData");
         const c=document.querySelector("#idInserimentoLuogo");
@@ -32,7 +32,7 @@ const rimuoviRiga=()=>{
         template=template.replace("&OPERA",a.nodeValue).replace("&DATA",b.nodeValue).replace("&LUOGO",c.nodeValue).replace("&DESCRIZIONE",d.nodeValue);
         console.log(template);
         opere.innerHTML+=template;
-        */
+        
         const a=document.querySelector("#idInserimentoOpera");
         const b=document.querySelector("#idInserimentoData");
         const c=document.querySelector("#idInserimentoLuogo");
@@ -45,7 +45,7 @@ const rimuoviRiga=()=>{
 aggiungiPulsantiRimozione();
 rimuoviRiga();
 aggiungiOpera();
-
+*/
 //``
 
 

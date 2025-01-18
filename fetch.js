@@ -1,3 +1,6 @@
+const myToken = 'c6664b7e-16c5-4a74-931e-377b271f30b2';
+const myKey = 'luogo';
+
 const raccogliDatiTabella = () => {
     const tabella = document.querySelector('.table tbody'); // Seleziona il corpo della tabella
     const datiTabella = [];
@@ -33,6 +36,7 @@ const raccogliDatiTabella = () => {
     .then(response => response.json())
     .then(result => {
       console.log("Dati salvati con successo:", result);
+      console.log(dati);
     })
     .catch(error => {
       console.error("Errore nel salvataggio dei dati:", error);
