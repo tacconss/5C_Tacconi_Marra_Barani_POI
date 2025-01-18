@@ -1,4 +1,4 @@
-const myToken = "c6664b7e-16c5-4a74-931e-377b271f30b2"; 
+/*const myToken = "c6664b7e-16c5-4a74-931e-377b271f30b2"; 
 
 // Elementi HTML
 const inputName = document.querySelector("#name");
@@ -62,3 +62,4 @@ loginButton.onclick = () => {
       alert("Errore di connessione. Riprova più tardi.");
     });
 };
+*/
