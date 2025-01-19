@@ -16,8 +16,7 @@ const createTable = (parentElement, canDeleteRows = true) => {
             return (
               `<tr id='row_${parentElement.id}_${id}'>` +
               row.map((col) => "<td>" + col + "</td>").join("") +
-              (canDeleteRows
-                ? `<td>
+              (canDeleteRows? `<td>
                      <button type='button' class='pulsantiElimina' id='bottoneE_${parentElement.id}_${id}'>elimina</button>
                    </td>`
                 : "") +
@@ -25,7 +24,9 @@ const createTable = (parentElement, canDeleteRows = true) => {
             );
           }
         }).join("");
-        htmlTable += "</table>";
+        htmlTable +="</table>"+
+        "<a href='#formAdmin'><button id='modificaTabella'>Modifica Tabella</button></a>";
+        const bottoneModifica=document.querySelector("#modificaTabella");
         parentElement.innerHTML = htmlTable;
   
         if (canDeleteRows) {
