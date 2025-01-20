@@ -8,7 +8,7 @@ export const generateFetchComponent = () => {
       build: (inputToken) => {
           myToken = inputToken;
       },
-      setData: (myKey, data) => {
+      setData: (data) => {
           return new Promise((resolve, reject) => {
               fetch("https://ws.cipiaceinfo.it/cache/set", {
                   method: "POST",
@@ -26,7 +26,7 @@ export const generateFetchComponent = () => {
               .catch(err => reject(err.result));
           });
       },
-      getData: (myKey) => {
+      getData: () => {
           return new Promise((resolve, reject) => {
               fetch("https://ws.cipiaceinfo.it/cache/get", {
                   method: "POST",
@@ -41,6 +41,7 @@ export const generateFetchComponent = () => {
               .then(r => r.json())
               .then(data => {
                   let dict = JSON.parse(data.result);
+                  console.log("result " + dict)
                   resolve(dict);
               })
               .catch(err => reject(err.result));
