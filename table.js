@@ -71,14 +71,6 @@ fetchComponent.getData().then((e) => {
         // Gestione dei pulsanti elimina
         document.querySelectorAll(".pulsantiElimina").forEach((button) => {
             button.onclick = () => {
-                const id = parseInt(button.id.replace("bottoneE_", ""));
-                list.splice(id, 1); // Rimuoviamo l'elemento dalla lista
-                fetchComponent.setData(list).then(() => {
-                    render(); // Rendi immediatamente dopo aver aggiornato il backend
-                }).catch(console.error);
-            };
-            
-            /*button.onclick = () => {
                 console.log("premuto")
                 const id = parseInt(button.id.replace("bottoneE_", ""));
                 list.splice(id, 1);  // Rimuoviamo l'elemento dalla lista
@@ -90,7 +82,7 @@ fetchComponent.getData().then((e) => {
 
                 // Rende di nuovo la lista aggiornata
             };
-            */
+            
         });
     }
 
