@@ -51,13 +51,16 @@ const createTable = (parentElement, canDeleteRows = true) => {
               const bottoneModifica = document.querySelector("#bottoneModifica");
               if (bottoneModifica) {
                   bottoneModifica.onclick = () => {
-                      // div nel html
-                      const formAdmin = document.querySelector("#formAdmin");
-                      
+                    //QUA SIAMO GIà NEL FORMADMIN AGGIUNGERE QUI DENTRO LA PARTE DEL BOTTONE CHE AGGIUNGE LE RIGHE ALLA TABELLA
+                    // div nel html
+                    const formAdmin = document.querySelector("#formAdmin");
+                    const tabella= document.querySelector("#table3"); // tabella 3
+                    
+
                     
                   };
               }
-          }
+          } 
       }
   }
 };
@@ -97,7 +100,7 @@ table2.build([
 table2.render();
 
 // Creazione della terza tabella
-const table3 = createTable(document.querySelector("#table3"), true);
+const table3 = createTable(document.querySelector("#table3"), false);
 table3.build([
   ["Opera", "Luogo", "Data", "Descrizione"],
   ["--", "Milano", "1920-1925", "D'Annunzio scrisse opere significative durante questo periodo."],
