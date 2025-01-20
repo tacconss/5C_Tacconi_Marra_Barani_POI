@@ -2,7 +2,7 @@ const createTable = (parentElement, canDeleteRows = true) => {
   let data;
   return {
       build: (dataInput) => {
-          data = [...dataInput]; // Copia i dati
+          data = [...dataInput];
       },
       render: () => {
           let htmlTable = "<table>";

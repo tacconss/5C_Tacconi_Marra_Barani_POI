@@ -1,23 +1,23 @@
-//const myToken = 'c6664b7e-16c5-4a74-931e-377b271f30b2';
-//const myKey = 'luogo';
+const myToken = 'c6664b7e-16c5-4a74-931e-377b271f30b2';
+const myKey = 'luogo';
 
 export const generateFetchComponent = () => {
-  let token;
+ // let token;
 
   return {
       build: (inputToken) => {
-          token = inputToken;
+          myToken = inputToken;
       },
-      setData: (key, data) => {
+      setData: (myKey, data) => {
           return new Promise((resolve, reject) => {
               fetch("https://ws.cipiaceinfo.it/cache/set", {
                   method: "POST",
                   headers: {
                       "content-type": "application/json",
-                      "key": token
+                      "key": myToken 
                   },
                   body: JSON.stringify({
-                      key: key,
+                      key: myKey,
                       value: JSON.stringify(data)
                   })
               })
@@ -26,16 +26,16 @@ export const generateFetchComponent = () => {
               .catch(err => reject(err.result));
           });
       },
-      getData: (key) => {
+      getData: (myKey) => {
           return new Promise((resolve, reject) => {
               fetch("https://ws.cipiaceinfo.it/cache/get", {
                   method: "POST",
                   headers: {
                       "content-type": "application/json",
-                      "key": token
+                      "key": myToken
                   },
                   body: JSON.stringify({
-                      key: key
+                      key: myKey
                   })
               })
               .then(r => r.json())
