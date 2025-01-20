@@ -1,4 +1,89 @@
-const createTable = (parentElement, canDeleteRows = true) => {
+const table = document.getElementById("table");
+const button = document.getElementById("submit");
+const opereInput = document.getElementById("opere");
+const luogoInput = document.getElementById("luogo");
+const dataInput = document.getElementById("data");
+const descrizioneInput = document.getElementById("descrizione");
+
+let list = [
+  { opere: "--", luogo: "Milano", data: "1898-1904", descrizione: "D'Annunzio scrisse opere significative durante questo periodo." },
+  { opere: "Il Fuoco", luogo: "Roma", data: "1900-1905", descrizione: "Un romanzo che esplora la vita e le passioni." },
+  { opere: "--", luogo: "Firenze", data: "1915-1920", descrizione: "Un periodo di intensa attività letteraria." },
+  { opere: "--", luogo: "Venezia", data: "1925-1930", descrizione: "Soggiorno durante la stesura di opere teatrali." },
+  { opere: "Il Trionfo della Morte", luogo: "Milano", data: "1894-1895", descrizione: "Un'opera che affronta temi esistenziali." },
+  { opere: "--", luogo: "Napoli", data: "1905-1910", descrizione: "Un periodo di riflessione e scrittura." },
+  { opere: "--", luogo: "Parigi", data: "1915-1920", descrizione: "Contatti con artisti e intellettuali." },
+  { opere: "--", luogo: "Torino", data: "1920-1925", descrizione: "Un'importante città per la sua carriera." },
+  { opere: "--", luogo: "Bologna", data: "1925-1930", descrizione: "Soggiorno durante la stesura di opere." },
+  { opere: "--", luogo: "Pescara", data: "1930-1935", descrizione: "Ultimi anni di vita e scrittura." }
+];
+
+let count = list.length; // Inizializziamo il contatore con la lunghezza iniziale della lista
+
+// Funzione per aggiungere un nuovo elemento alla lista
+button.onclick = () => {
+  if (opereInput.value.trim() === "" || luogoInput.value.trim() === "" || dataInput.value.trim() === "" || descrizioneInput.value.trim() === "") return; // Se uno dei campi è vuoto, non fare nulla
+
+  let data = {
+    opere: opereInput.value,
+    luogo: luogoInput.value,
+    data: dataInput.value,
+    descrizione:  descrizioneInput.value
+  };
+
+  list.push(data);
+  render();
+  count++;
+  opereInput.value = "";
+  luogoInput.value = "";
+  dataInput.value = "";
+  descrizioneInput.value = "";
+};
+
+// Funzione per renderizzare la tabella
+function render() {
+  let html = `
+    <thead>
+      <tr>
+        <th>Opere</th>
+        <th>Luogo</th>
+        <th>Data</th>
+        <th>Descrizione</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
+
+  list.forEach((element, id) => {
+    html += `
+      <tr id='tr_${id}'>
+        <td>${element.opere}</td>
+        <td>${element.luogo}</td>
+        <td>${element.data}</td>
+        <td>${element.descrizione}</td>
+        <td>
+          <button type='button' class='pulsantiElimina' id='bottoneE_${id}'>Elimina</button>
+        </td>
+      </tr>
+    `;
+  });
+
+  html += "</tbody>";
+  table.innerHTML = html;  // Impostiamo il contenuto della tabella
+
+  // Gestione dei pulsanti elimina
+  document.querySelectorAll(".pulsantiElimina").forEach((button) => {
+    button.onclick = () => {
+      const id = parseInt(button.id.replace("bottoneE_", ""));
+      list.splice(id, 1);  // Rimuoviamo l'elemento dalla lista
+      render();  // Rende di nuovo la lista aggiornata
+    };
+  });
+}
+
+render();  // Rendering iniziale della tabella
+
+/*const createTable = (parentElement, canDeleteRows = true) => {
   let data;
   return {
       build: (dataInput) => {
@@ -56,14 +141,17 @@ const createTable = (parentElement, canDeleteRows = true) => {
                     const formAdmin = document.querySelector("#formAdmin");
                     const tabella= document.querySelector("#table3"); // tabella 3
                     
-
+                    
                     
                   };
               }
           } 
       }
   }
+  
 };
+
+
 
 // Creazione della prima tabella
 const table1 = createTable(document.querySelector("#table1"), false);
@@ -115,3 +203,91 @@ table3.build([
   ["--", "Pescara", "1930-1935", "Ultimi anni di vita e scrittura."],
 ]);
 table3.render();
+
+*/
+
+/*
+
+CODICE PER INSERIRE DATI IN TABELLA
+
+const table = document.getElementById("table");
+const button = document.getElementById("submit");
+const opereInput = document.getElementById("opere");
+const luogoInput = document.getElementById("luogo");
+const dataInput = document.getElementById("data");
+const descrizioneInput = document.getElementById("descrizione");
+
+let list = [];
+let count = 0;
+//const myToken = "c6664b7e-16c5-4a74-931e-377b271f30b2";
+//const myKey = "chiave";
+
+
+
+// Funzione per aggiungere un nuovo elemento alla lista
+button.onclick = () => {
+  if (opereInput.value.trim() === "" || luogoInput.value.trim() === "" || dataInput.value.trim() === "" || descrizioneInput.value.trim() === "") return; // Se uno dei campi è vuoto, non fare nulla
+
+  let data = {
+    opere: opereInput.value,
+    luogo: luogoInput.value,
+    data: dataInput.value,
+    descrizione:  descrizioneInput.value
+  };
+
+  list.push(data);
+  render();
+  count++;
+  opereInput.value = "";
+  luogoInput.value = "";
+  dataInput.value = "";
+  descrizioneInput.value = "";
+  //update();
+};
+
+// Funzione per renderizzare la tabella
+function render() {
+  let html = `
+    <thead>
+      <tr>
+        <th>Opere</th>
+        <th>Luogo</th>
+        <th>Data</th>
+        <th>Descrizione</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
+
+  list.forEach((element, id) => {
+    html += `
+      <tr id='tr_${id}'>
+        <td>${element.opere}</td>
+        <td>${element.luogo}</td>
+        <td>${element.data}</td>
+        <td>${element.descrizione}</td>
+        <td>
+          <button type='button' class='pulsantiElimina' id='bottoneE_${id}'>Elimina</button>
+        </td>
+      </tr>
+    `;
+  });
+
+  html += "</tbody>";
+  table.innerHTML = html;  // Impostiamo il contenuto della tabella
+
+  // Gestione dei pulsanti elimina
+  document.querySelectorAll(".pulsantiElimina").forEach((button) => {
+    button.onclick = () => {
+      const id = parseInt(button.id.replace("bottoneE_", ""));
+      list.splice(id, 1);  // Rimuoviamo l'elemento dalla lista
+      render();  // Rende di nuovo la lista aggiornata
+      //update();  // Invia i dati aggiornati al server
+    };
+  });
+}
+
+
+render();  // Rendering iniziale della tabella
+
+*/
