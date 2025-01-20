@@ -26,6 +26,8 @@ fetchComponent.getData().then((e) => {
 
         list.push(data);
         fetchComponent.setData(list).then(() => fetchComponent.getData().then(function (e) {
+            data = e;
+            list = e;
             render();
             count++;
             opereInput.value = "";
@@ -69,9 +71,12 @@ fetchComponent.getData().then((e) => {
         // Gestione dei pulsanti elimina
         document.querySelectorAll(".pulsantiElimina").forEach((button) => {
             button.onclick = () => {
+                console.log("premuto")
                 const id = parseInt(button.id.replace("bottoneE_", ""));
                 list.splice(id, 1);  // Rimuoviamo l'elemento dalla lista
                 fetchComponent.setData(list).then(() => fetchComponent.getData().then(function (e) {
+                    list=e;
+                    data=e;
                     render();
                 }).then(console.log)).catch(console.error)
 
@@ -85,11 +90,11 @@ fetchComponent.getData().then((e) => {
 
 const createTable = (parentElement, canDeleteRows) => {
     let data;
-    return {
+     const a = {
         build: (dataInput) => {
             data = dataInput;
         },
-        render: () => {
+        render: function() {
             let htmlTable = "<table>";
             let temp = "";
             let index = 0;
@@ -131,12 +136,18 @@ const createTable = (parentElement, canDeleteRows) => {
             console.log(eliminaButtons)
             eliminaButtons.forEach((button) => {
                 button.onclick = () => {
+                    console.log("premuto")
                     const id = parseInt(button.id.replace(`bottoneE_${parentElement.id}_`, ""));
                     const rowToDelete = parentElement.querySelector(`#row_${parentElement.id}_${id}`);
                     if (rowToDelete) {
                         rowToDelete.remove(); // Elimina la riga dal html
                     }
                     data.splice(id + 1, 1); // Aggiorna i dati
+                    fetchComponent.setData(data).then(() => fetchComponent.getData().then(function (e) {
+                        list=e;
+                        data=e;
+                        this.render();
+                    }).then(console.log)).catch(console.error)
                 };
             });
 
@@ -156,6 +167,7 @@ const createTable = (parentElement, canDeleteRows) => {
 
         }
     }
+    return a;
 };
 
 
