@@ -6,16 +6,16 @@ const dataInput = document.getElementById("data");
 const descrizioneInput = document.getElementById("descrizione");
 
 let list = [
-  { opere: "--", luogo: "Milano", data: "1898-1904", descrizione: "D'Annunzio scrisse opere significative durante questo periodo." },
-  { opere: "Il Fuoco", luogo: "Roma", data: "1900-1905", descrizione: "Un romanzo che esplora la vita e le passioni." },
-  { opere: "--", luogo: "Firenze", data: "1915-1920", descrizione: "Un periodo di intensa attività letteraria." },
-  { opere: "--", luogo: "Venezia", data: "1925-1930", descrizione: "Soggiorno durante la stesura di opere teatrali." },
-  { opere: "Il Trionfo della Morte", luogo: "Milano", data: "1894-1895", descrizione: "Un'opera che affronta temi esistenziali." },
-  { opere: "--", luogo: "Napoli", data: "1905-1910", descrizione: "Un periodo di riflessione e scrittura." },
-  { opere: "--", luogo: "Parigi", data: "1915-1920", descrizione: "Contatti con artisti e intellettuali." },
-  { opere: "--", luogo: "Torino", data: "1920-1925", descrizione: "Un'importante città per la sua carriera." },
-  { opere: "--", luogo: "Bologna", data: "1925-1930", descrizione: "Soggiorno durante la stesura di opere." },
-  { opere: "--", luogo: "Pescara", data: "1930-1935", descrizione: "Ultimi anni di vita e scrittura." }
+  { opere: "--", luogo: "Pescara", data: "1863-1871", descrizione: "Anni dell'infanzia; nacque a Pescara il 12 marzo 1863." },
+  { opere: "Il piacere", luogo: "Roma", data: "1879-1891", descrizione: "Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre opere." },
+  { opere: "--", luogo: "Napoli", data: "1891-1894", descrizione: "Frequentazioni culturali e stesura di alcune opere influenzate dalla città." },
+  { opere: "--", luogo: "Venezia", data: "1894-1897", descrizione: "Soggiorno durante la stesura di Le vergini delle rocce e altre opere." },
+  { opere: "--", luogo: "Firenze", data: "1898-1904", descrizione: "Pubblicazione di opere come il Meriggio" },
+  { opere: "--", luogo: "Marina di Pietrasanta", data: "1905-1910", descrizione: "Periodo di soggiorno durante la scrittura di La figlia di Iorio e altre opere teatrali." },
+  { opere: "--", luogo: "Parigi", data: "1910-1915", descrizione: "Periodo di ''fuga'' dai creditori; entrò in contatto con artisti e intellettuali francesi." },
+  { opere: "--", luogo: "Milano", data: "1915-1918", descrizione: "Periodo di intensa attività teatrale e politica." },
+  { opere: "--", luogo: "Fiume", data: "1919-1920", descrizione: "D'Annunzio guidò l'Impresa di Fiume, una spedizione militare con cui occupò la città per rivendicarne l'annessione all'Italia" },
+  { opere: "--", luogo: "Gardone Riviera", data: "1920-1938", descrizione: "Ultimi anni di vita e scrittura." }
 ];
 
 let count = list.length; // Inizializziamo il contatore con la lunghezza iniziale della lista
