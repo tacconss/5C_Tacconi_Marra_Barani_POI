@@ -91,26 +91,32 @@ const createTable = (parentElement, canDeleteRows) => {
         },
         render: () => {
             let htmlTable = "<table>";
-            console.log(data)
-            htmlTable += Object.values(data).map((row, index) => {
-                console.log(row)
+            let temp = "";
+            let index = 0;
+        
+            Object.values(data).forEach((row) => {
                 if (index === 0) {
                     // Intestazione della tabella
-                    return "<tr>" + row.map((col) => "<th>" + col + "</th>").join("") + "</tr>";
+                    temp += "<tr>";
+                    for (const key in row) {
+                        temp += "<th>" + key + "</th>";
+                    }
+                    temp += "</tr>";
+                    index++;
                 } else {
                     const id = index - 1;
                     const rowId = `row_${parentElement.id}_${id}`; // ID della riga
-                    let rowHtml = `<tr id='${rowId}'>` +
-                        Object.keys(row).map((col) => "<td>" + col + "</td>").join("") +
-                        (canDeleteRows ? `<td>
-                           <button type='button' class='pulsantiElimina' id='bottoneE_${parentElement.id}_${id}'>elimina</button>
-                         </td>` : "") +
-                        "</tr>";
-
-                    return rowHtml;
+                    temp += `<tr id='${rowId}'>` +
+                        Object.keys(row).map((col) => "<td>" + row[col] + "</td>").join("") 
+                    index++;
                 }
-            }).join("");
+            });
+        
+            htmlTable += temp; // Aggiungi le righe generate
             htmlTable += "</table>";
+        
+            parentElement.innerHTML = htmlTable; // Restituisci la tabella generata
+        
 
             // Aggiungi un unico bottone in fondo alla tabella
             if (parentElement.id === "table2") {
@@ -154,8 +160,6 @@ const createTable = (parentElement, canDeleteRows) => {
 
 
 
-
-
 // Creazione della prima tabella
 const table1 = createTable(document.querySelector("#table1"), true);
 fetchComponent.getData().then((e) => {
@@ -163,4 +167,3 @@ fetchComponent.getData().then((e) => {
     table1.build(e);
     table1.render();
 });
-
