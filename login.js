@@ -7,7 +7,6 @@ const createLogin = () =>{
   const loginButton = document.querySelector("#loginButton");
   const registerButton= document.querySelector("#register");
   const form = document.querySelector("#admin");
-  const divPrivate = document.querySelector("#private");
   const divLogin = document.querySelector("#login");
   let isLogged = false;
 
