@@ -6,13 +6,13 @@ const createLogin = () =>{
   const inputPassword = document.querySelector("#password");
   const loginButton = document.querySelector("#loginButton");
   const registerButton= document.querySelector("#register");
-  const form = document.querySelector("#form");
+  const form = document.querySelector("#admin");
   const divPrivate = document.querySelector("#private");
   const divLogin = document.querySelector("#login");
   let isLogged = false;
 
-  //divPrivate.classList.remove(".visible");
- // divPrivate.classList.add(".hidden");
+  divLogin.classList.remove("visible");
+  form.classList.add("hidden");
   isLogged = sessionStorage.getItem("Logged") || false;
 
     const registra = (username, password) => {
@@ -60,7 +60,7 @@ const createLogin = () =>{
   };
 
     // Nascondi la mappa e la tabella inizialmente
-   // form.classList.add("hidden");
+    form.classList.add("hidden");
 
     const login = (username, password) => {
       return new Promise((resolve, reject) => {
@@ -97,7 +97,7 @@ const createLogin = () =>{
           if (result) {
               isLogged = true;
               divLogin.classList.add("hidden");
-              form.classList.remove("hidden");
+              form.classList.add("visible");
           } else {
               console.error("Login fallito.");
           }
