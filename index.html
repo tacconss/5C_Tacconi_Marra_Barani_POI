@@ -82,15 +82,14 @@
            
           </div>
         -->
-          <div class="edit-button">
-            <a href="#formAdmin"><button>Modifica luoghi presenti</button></a>
-          </div>
+          
         </div>
       </div>
     </div>
 
     <!-- pagina form admin-->
-    <div id="formAdmin" class="container page hidden">
+   <!-- <div id="formAdmin" class="container page hidden">
+    
       <h4>Seleziona il luogo da modificare</h4>
       <div class="mb-3">
         <label for="operaInput" class="form-label">Opera</label>
@@ -109,6 +108,20 @@
         <input type="text" class="form-control" id="descrizioneInput" placeholder="Inserire Descrizione">
       </div>
     </div>
+    --> 
+
+    <div class="container"></div>
+      <h1>Modifica tabella</h1>
+      <form id="form">
+          <input type="text" id="opere" placeholder="Opere" required>
+          <input type="text" id="luogo" placeholder="Luogo" required>
+          <input type="text" id="data" placeholder="Data" required>
+          <input type="text" id="descrizione" placeholder="Descrizione" required>
+          <button type="button" id="submit">Aggiungi</button>
+      </form>
+  
+      <table id="table"></table>
+  </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
