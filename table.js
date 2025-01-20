@@ -83,7 +83,7 @@ function render() {
 
 render();  // Rendering iniziale della tabella
 
-/*const createTable = (parentElement, canDeleteRows = true) => {
+const createTable = (parentElement, canDeleteRows = true) => {
   let data;
   return {
       build: (dataInput) => {
@@ -171,7 +171,7 @@ table1.build([
 table1.render();
 
 // Creazione della seconda tabella
-const table2 = createTable(document.querySelector("#table2"), true);
+/*const table2 = createTable(document.querySelector("#table2"), true);
 table2.build([
   ["Opera", "Luogo", "Data", "Descrizione"],
   ["--", "Fiume", "1919-1920", "D'Annunzio guidò l'Impresa di Fiume..."],
@@ -203,8 +203,8 @@ table3.build([
   ["--", "Pescara", "1930-1935", "Ultimi anni di vita e scrittura."],
 ]);
 table3.render();
-
 */
+
 
 /*
 
