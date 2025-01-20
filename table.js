@@ -10,11 +10,11 @@ let list = [
   { opere: "Il piacere", luogo: "Roma", data: "1879-1891", descrizione: "Studi universitari e prime esperienze letterarie, periodo della pubblicazione di Il Piacere e altre opere." },
   { opere: "--", luogo: "Napoli", data: "1891-1894", descrizione: "Frequentazioni culturali e stesura di alcune opere influenzate dalla città." },
   { opere: "--", luogo: "Venezia", data: "1894-1897", descrizione: "Soggiorno durante la stesura di Le vergini delle rocce e altre opere." },
-  { opere: "--", luogo: "Milano", data: "1898-1904", descrizione: "Periodo di intensa attività teatrale e politica." },
-  { opere: "--", luogo: "Napoli", data: "1905-1910", descrizione: "Un periodo di riflessione e scrittura." },
-  { opere: "--", luogo: "Marina di Pietrasanta", data: "1915-1920", descrizione: "Contatti con artisti e intellettuali." },
-  { opere: "--", luogo: "Parigi", data: "1920-1925", descrizione: "Un'importante città per la sua carriera." },
-  { opere: "--", luogo: "Firenze", data: "1925-1930", descrizione: "Soggiorno durante la stesura di opere." },
+  { opere: "--", luogo: "Firenze", data: "1898-1904", descrizione: "Periodo di intensa attività teatrale e politica." },
+  { opere: "--", luogo: "Marina di Pietrasanta", data: "1905-1910", descrizione: "Un periodo di riflessione e scrittura." },
+  { opere: "--", luogo: "Parigi", data: "1910-1915", descrizione: "Contatti con artisti e intellettuali." },
+  { opere: "--", luogo: "Milano", data: "1915-1918", descrizione: "Un'importante città per la sua carriera." },
+  { opere: "--", luogo: "Fiume", data: "1919-1920", descrizione: "Soggiorno durante la stesura di opere." },
   { opere: "--", luogo: "Gardone Riviera", data: "1920-1938", descrizione: "Ultimi anni di vita e scrittura." }
 ];
 
