@@ -14,7 +14,7 @@ const createLogin = () =>{
   form.classList.add("hidden");
   isLogged = sessionStorage.getItem("Logged") || false;
 
-    const registra = (username, password) => {
+    /*const registra = (username, password) => {
       return new Promise((resolve, reject) => {
           fetch("https://ws.cipiaceinfo.it/credential/register", {
               method: "POST",
@@ -34,7 +34,8 @@ const createLogin = () =>{
           .catch(reject);
       });
   };
-
+*/
+/*
   registerButton.onclick = () => {
     console.log("cliccato")
     const username = inputName.value.trim();
@@ -56,7 +57,7 @@ const createLogin = () =>{
     }).catch((error) => {
         console.error("Errore durante la registrazione:", error);
     });
-  };
+  };*/
 
     // Nascondi la mappa e la tabella inizialmente
     form.classList.add("hidden");

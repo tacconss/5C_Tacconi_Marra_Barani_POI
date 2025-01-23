@@ -73,7 +73,7 @@ fetchComponent.getData().then((e) => {
             button.onclick = () => {
                 console.log("premuto")
                 const id = parseInt(button.id.replace("bottoneE_", ""));
-                list.splice(id, 1);  // Rimuoviamo l'elemento dalla lista
+                list.splice(id + 1, 1);  // Rimuoviamo l'elemento dalla lista
                 fetchComponent.setData(list).then(() => fetchComponent.getData().then(function (e) {
                     list=e;
                     data=e;
