@@ -82,6 +82,7 @@ fetchComponent.getData().then((e) => {
 
                 // Rende di nuovo la lista aggiornata
             };
+            
         });
     }
 
